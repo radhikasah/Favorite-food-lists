@@ -8,7 +8,13 @@
 });*/
 var foodieApp = angular.module('foodieApp',[]);
 console.log(foodieApp);
-foodieApp.controller('mainController',function($scope) {
+
+
+foodieApp.controller('loginController',function($scope) {          //this controller is define for login page//
+})
+
+
+foodieApp.controller('mainController',function($scope) {			//this controller is define for main page page//
 	
 	$scope.restaurants = [{
 	name: 'Farzi Cafe',

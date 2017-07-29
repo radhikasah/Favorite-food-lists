@@ -22,7 +22,7 @@
 </head>
 
 <body id="app">
-    <div class="login hidden">
+    <div class="login hidden" ng-controller="loginController">            <!--------------define controller for login------------->
         <div class="login-form">
             <h3> Login </h3>
 			<form name="loginForm">
@@ -54,7 +54,7 @@
 	
 	
 	<!----------------main page------------->
-    <div class="main">
+    <div class="main" ng-controller="mainController">                          <!----define controller----->
         <nav class="navbar navbar-default navbar-fixed">
             <div class="container-fluid">
                 <!-- Brand and toggle get grouped for better mobile display -->
