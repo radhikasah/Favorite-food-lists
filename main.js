@@ -24,7 +24,12 @@ foodieApp.config(function ($routeProvider) {
 
 
 
-foodieApp.controller('loginController',function($scope) {          //this controller is define for login page//
+foodieApp.controller('loginController',function($scope,$location) {  
+        //this controller is define for login page//
+		$scope.goToHome = function() {
+		// console.log('Do Something')
+		$location.url('home')
+	}
 })
 
 
