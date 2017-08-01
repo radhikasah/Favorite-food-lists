@@ -92,15 +92,12 @@ $.ajax({
     	console.log(xhr);
     }
 })
-Let's first copy the whole thing inside our 'getIngredients' function
-$HTTP OBJECT
 
-}
 	
 //console.log(foodieApp);
 
 
-})
+
 
 
 
