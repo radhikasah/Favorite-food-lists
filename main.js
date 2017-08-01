@@ -21,7 +21,7 @@ foodieApp.config(function ($routeProvider) {
 
 
 
-foodieApp.controller('restaurantController',function($scope,$routeParams) {
+foodieApp.controller('restaurantController',function($scope,$routeParams,$http) {
 	$scope.restaurantId = $routeParams.id;
 	var restaurants = [{
 	name: 'Farzi Cafe',
@@ -43,8 +43,13 @@ foodieApp.controller('restaurantController',function($scope,$routeParams) {
 	category: 'Casual Dining, Bar',
 	vote: '4.5',
 	cuisines: 'Modern Indian',
+
 	cost: '200',
 	id:2,
+	bestDish: {
+			name: 'Corn Pizza',
+			image: 'http://noblepig.com/images/2016/06/Avocado-and-Three-Bean-Salad-is-perfect-for-a-summertime-barbecue-side-dish.JPG'
+		},
 	hours: '12 Noon to 1 AM (Mon-Sun)',
 	image: 'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRoKh-sAKBzmI4Shgz4QVLO643FZ7SZDEJd0fb69rPixmIFnsur'
 },
@@ -61,6 +66,36 @@ foodieApp.controller('restaurantController',function($scope,$routeParams) {
 	image: 'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQtCTNtWjF54uFAJR4mxuOVP3j8Xf-TflcgO5H0p-XWU8QJxecQsA'
 }]
 	$scope.restaurant = restaurants[$routeParams.id - 1];
+	
+	$scope.getIngredients = function(url) {
+// Do something
+
+//------------------------------write  ajax call here-----------------------//
+var data = '{"inputs":[{"data":{"image":{"url":"' + url + '"}}}]}'
+$.ajax({
+	'type': 'POST',
+	'url': 'https://api.clarifai.com/v2/models/bd367be194cf45149e75f01d59f77ba7/outputs',
+	'headers': {
+		'Authorization': 'Key YOUR_API_KEY',
+		'Content-Type': 'application/json'
+	},
+	'data': data,
+	success: function (response) {
+		var ingredients = response.outputs[0].data.concepts;
+			var list = '';
+			for (var i =0;i < ingredients.length ;i++) {
+				list += 'div class="ingredient">' + ingredients[i].name + ''
+			}
+		$('.ingredients').html(list);
+    },
+    error: function (xhr) {
+    	console.log(xhr);
+    }
+})
+Let's first copy the whole thing inside our 'getIngredients' function
+$HTTP OBJECT
+
+}
 	
 //console.log(foodieApp);
 
