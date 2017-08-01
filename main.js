@@ -70,28 +70,17 @@ foodieApp.controller('restaurantController',function($scope,$routeParams,$http) 
 	$scope.getIngredients = function(url) {
 // Do something
 
-//------------------------------write  ajax call here-----------------------//
-var data = '{"inputs":[{"data":{"image":{"url":"' + url + '"}}}]}'
-$.ajax({
-	'type': 'POST',
-	'url': 'https://api.clarifai.com/v2/models/bd367be194cf45149e75f01d59f77ba7/outputs',
-	'headers': {
-		'Authorization': 'Key YOUR_API_KEY',
-		'Content-Type': 'application/json'
-	},
-	'data': data,
-	success: function (response) {
-		var ingredients = response.outputs[0].data.concepts;
-			var list = '';
-			for (var i =0;i < ingredients.length ;i++) {
-				list += 'div class="ingredient">' + ingredients[i].name + ''
-			}
-		$('.ingredients').html(list);
-    },
-    error: function (xhr) {
-    	console.log(xhr);
-    }
+
+	}
 })
+
+//------------------------------write  ajax call here-----------------------//
+
+
+
+
+
+
 
 	
 //console.log(foodieApp);
@@ -115,6 +104,7 @@ foodieApp.controller('loginController',function($scope,$location) {
 	}
 	
 })
+
 
 //------------------------------yhis is for main page------------------------//
 foodieApp.controller('mainController',function($scope) {			//this controller is define for main page page//
