@@ -1,11 +1,4 @@
-// Runs when HTML file is loaded
-/*$(document).ready(function() {
-   $('#user-email').on('input',function() {
-        var email = $('#user-email').val();
-        var message = 'Welcome Back, ' + email;
-        $('.welcome-message').text(message);
-    });
-});*/
+
 var foodieApp = angular.module('foodieApp',['ngRoute']);
 foodieApp.config(function ($routeProvider) {
 	$routeProvider
@@ -17,22 +10,43 @@ foodieApp.config(function ($routeProvider) {
 		templateUrl: 'pages/main.html',
 		controller: 'mainController'
 	})
+	.when('/restaurant/:id',{												//restaurant page per veg rahe he
+		templateUrl: 'pages/restaurant.html',
+		controller: 'restaurantController'
+	})
 })
+//--------------------------this is for restaurant page-------------------------------------//
 
 
+
+
+
+foodieApp.controller('restaurantController',function($scope,$routeParams) {
+	$scope.restaurantId = $routeParams.id;
+	
 //console.log(foodieApp);
 
 
-
-foodieApp.controller('loginController',function($scope,$location) {  
-        //this controller is define for login page//
-		$scope.goToHome = function() {
-		// console.log('Do Something')
-		$location.url('home')
-	}
 })
 
 
+
+
+//-------------------------------this is for login page-------------------------------------//
+
+foodieApp.controller('loginController',function($scope,$location) {  
+        //this controller is define for login page//
+		//$scope.goToHome = function() {
+		// console.log('Do Something')
+		//$location.url('home')
+		$scope.goToHome = function() {
+		//console.log('Do Something')
+		$location.url('home')
+	}
+	
+})
+
+//------------------------------yhis is for main page------------------------//
 foodieApp.controller('mainController',function($scope) {			//this controller is define for main page page//
 	
 	$scope.restaurants = [{
@@ -43,8 +57,10 @@ foodieApp.controller('mainController',function($scope) {			//this controller is 
 	vote: '4.2',
 	cuisines: 'Modern Indian',
 	cost: '2200',
+	id:1,
 	hours: '12 Noon to 1 AM (Mon-Sun)',
 	image: 'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRBJPEXGlAtA-eWhyGOjSEVV3gVY0IT8ywTL9eH79uo3AYCclPI'
+	
 },
 {
 	name: 'Club Coffee',
@@ -54,6 +70,7 @@ foodieApp.controller('mainController',function($scope) {			//this controller is 
 	vote: '4.5',
 	cuisines: 'Modern Indian',
 	cost: '200',
+	id:2,
 	hours: '12 Noon to 1 AM (Mon-Sun)',
 	image: 'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRoKh-sAKBzmI4Shgz4QVLO643FZ7SZDEJd0fb69rPixmIFnsur'
 },
@@ -65,6 +82,7 @@ foodieApp.controller('mainController',function($scope) {			//this controller is 
 	vote: '4.7',
 	cuisines: 'Modern Nepal',
 	cost: '700',
+	id:3,
 	hours: '12 Noon to 1 AM (sun-Sat)',
 	image: 'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQtCTNtWjF54uFAJR4mxuOVP3j8Xf-TflcgO5H0p-XWU8QJxecQsA'
 }]
