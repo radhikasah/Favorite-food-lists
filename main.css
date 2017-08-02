@@ -8,6 +8,11 @@ body {
     background-color: #F3F3E8;
     font-family: Helvetica, Arial, sans-serif;
 }
+#sidebar {
+	position:relative;
+	left:590px;
+	bottom:800px;
+	}
 
 .hero {
     background-image: url('https://anandipaliwal.files.wordpress.com/2015/06/food-table-relisted.jpg');
@@ -148,4 +153,9 @@ body {
     padding: 0.4rem 1rem;
     border-radius: 4px;
     cursor: pointer;
+}
+.list {
+  background-color:  lightgrey;
+  width: 20%;
+  margin: 10px auto;
 }

@@ -176,3 +176,6 @@ foodieApp.controller('mainController',function($scope) {			//this controller is 
 	image: 'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQtCTNtWjF54uFAJR4mxuOVP3j8Xf-TflcgO5H0p-XWU8QJxecQsA'
 }]
 })
+
+
+
