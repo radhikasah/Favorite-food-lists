@@ -22,6 +22,7 @@ foodieApp.config(function ($routeProvider) {
 
 
 foodieApp.controller('restaurantController',function($scope,$routeParams,$http) {
+	$scope.ingredients = [];
 	$scope.restaurantId = $routeParams.id;
 	var restaurants = [{
 	name: 'Farzi Cafe',
@@ -32,6 +33,10 @@ foodieApp.controller('restaurantController',function($scope,$routeParams,$http) 
 	cuisines: 'Modern Indian',
 	cost: '2200',
 	id:1,
+	bestDish: {
+			name: 'Corn Pizza',
+			image: 'http://noblepig.com/images/2016/06/Avocado-and-Three-Bean-Salad-is-perfect-for-a-summertime-barbecue-side-dish.JPG'
+		},
 	hours: '12 Noon to 1 AM (Mon-Sun)',
 	image: 'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRBJPEXGlAtA-eWhyGOjSEVV3gVY0IT8ywTL9eH79uo3AYCclPI'
 	
@@ -62,27 +67,50 @@ foodieApp.controller('restaurantController',function($scope,$routeParams,$http) 
 	cuisines: 'Modern Nepal',
 	cost: '700',
 	id:3,
+	bestDish: {
+			name: 'Corn Pizza',
+			image: 'http://noblepig.com/images/2016/06/Avocado-and-Three-Bean-Salad-is-perfect-for-a-summertime-barbecue-side-dish.JPG'
+		},
 	hours: '12 Noon to 1 AM (sun-Sat)',
 	image: 'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQtCTNtWjF54uFAJR4mxuOVP3j8Xf-TflcgO5H0p-XWU8QJxecQsA'
 }]
 	$scope.restaurant = restaurants[$routeParams.id - 1];
 	
-	$scope.getIngredients = function(url) {
-// Do something
-
-
-	}
-})
-
-//------------------------------write  ajax call here-----------------------//
-
-
-
-
-
-
-
 	
+	
+	$scope.getIngredients = function(url) {
+											var data = '{"inputs":[{"data":{"image":{"url":"' + url + '"}}}]}'
+		                               $http({
+				'method': 'POST',
+				'url': 'https://api.clarifai.com/v2/models/bd367be194cf45149e75f01d59f77ba7/outputs',
+				'headers': {
+				'Authorization': 'Key eeab6be54c7d4136acf2cb0624a05010',
+				'Content-Type': 'application/json'
+				 },
+                 'data': data,
+				//success: function (response) {
+					//var ingredients = response.outputs[0].data.concepts;
+            //var list = '';
+            //for (var i =0;i < ingredients.length;i++) {
+                //list += '<div class="ingredient">' + ingredients[i].name + '</div>'
+           // }
+            //$('.ingredients').html(list);
+				//},
+				//error: function (xhr) {
+					//console.log(xhr);
+				//}
+			}).then(function success(response) {
+				 		var ingredients = response.data.outputs[0].data.concepts;
+            var list = '';
+						   for (var i =0;i < ingredients.length;i++) {
+					$scope.ingredients.push(ingredients[i].name);
+					}
+					
+				  }, function error(xhr) {
+					console.log(xhr);
+				  });	
+											}
+})
 //console.log(foodieApp);
 
 

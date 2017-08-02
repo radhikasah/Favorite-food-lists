@@ -38,6 +38,13 @@
     <div class="rating">
         <strong>{{restaurant.vote}}</strong>
     </div>
+	<div ng-if="ingredients">
+    <ol>
+    <li ng-repeat="ingredient in ingredients">
+    {{ingredient}}
+    </li>
+    </ol>
+	</div>
 </div>
 <!--------------------------if page is not found than error show------------------------>
 <div>
