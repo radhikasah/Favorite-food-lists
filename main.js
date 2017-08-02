@@ -76,7 +76,7 @@ foodieApp.controller('restaurantController',function($scope,$routeParams,$http) 
 }]
 	$scope.restaurant = restaurants[$routeParams.id - 1];
 	
-	
+	//-------------------------------write Ajax code here-----------------//
 	
 	$scope.getIngredients = function(url) {
 											var data = '{"inputs":[{"data":{"image":{"url":"' + url + '"}}}]}'
@@ -115,11 +115,9 @@ foodieApp.controller('restaurantController',function($scope,$routeParams,$http) 
 
 
 
-
-
-
-
 //-------------------------------this is for login page-------------------------------------//
+
+
 
 foodieApp.controller('loginController',function($scope,$location) {  
         //this controller is define for login page//
@@ -134,7 +132,10 @@ foodieApp.controller('loginController',function($scope,$location) {
 })
 
 
-//------------------------------yhis is for main page------------------------//
+//------------------------------this is for main page------------------------//
+
+
+
 foodieApp.controller('mainController',function($scope) {			//this controller is define for main page page//
 	
 	$scope.restaurants = [{
