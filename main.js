@@ -21,8 +21,8 @@ foodieApp.config(function ($routeProvider) {
 
 
 
-foodieApp.controller('restaurantController',function($scope,$routeParams,$location,$http) {
-	 $scope.gettofav = function(){
+  foodieApp.controller('restaurantController',function($scope,$location,$routeParams,$http) {
+	                               $scope.gettofav = function(){
 									   $location.url('fav')
 									   console.log($location.url);
 								   }
