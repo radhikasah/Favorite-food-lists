@@ -14,6 +14,10 @@ foodieApp.config(function ($routeProvider) {
 		templateUrl: 'pages/restaurant.html',
 		controller: 'restaurantController'
 	})
+	.when('/fav', {
+		templateUrl: 'pages/fav.html',//yha fav.html wale page ka link hai or unke controller
+		controller: 'favController'
+	})
 })
 //--------------------------this is for restaurant page-------------------------------------//
 
@@ -145,7 +149,7 @@ foodieApp.controller('mainController',function($scope) {			//this controller is 
 	name: 'Farzi Cafe',
 	address: '38/39, Level 1, Block E , Inner Circle, Connaught Place',
 	location: 'Connaught Place',
-	category: 'Casual Dining, Bar',
+	category: '50% STUDENT DISCOUNT',
 	vote: '4.2',
 	cuisines: 'Modern Indian',
 	cost: '2200',
@@ -158,7 +162,7 @@ foodieApp.controller('mainController',function($scope) {			//this controller is 
 	name: 'Club Coffee',
 	address: 'Baddi',
 	location: 'Connaught Place',
-	category: 'Casual Dining, Bar',
+	category: '10% OFF COLLECTIONS',
 	vote: '4.5',
 	cuisines: 'Modern Indian',
 	cost: '200',
@@ -170,7 +174,7 @@ foodieApp.controller('mainController',function($scope) {			//this controller is 
 	name: 'Aroma Mocha',
 	address: 'Janakpur',
 	location: 'Connaught Place',
-	category: 'Casual Dining, Bar',
+	category: '20% FAMILY DISCOUNT ',
 	vote: '4.7',
 	cuisines: 'Modern Nepal',
 	cost: '700',
@@ -262,7 +266,7 @@ foodieApp.controller('favController',function($scope,$location,$http) {
 					};
 
 
-								$scope.getFav = function(url) {
+								$scope.gettofav = function(url) {
 						var data = '{"inputs":[{"data":{"image":{"url":"' + url + '"}}}]}'
 										$http({
 											'method': 'POST',

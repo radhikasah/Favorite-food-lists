@@ -11,21 +11,10 @@ body {
 #sidebar {
 	position:relative;
 	left:883px;
-	bottom:800px;
+	bottom:820px;
 	}
 
-.hero {
-    background-image: url('https://anandipaliwal.files.wordpress.com/2015/06/food-table-relisted.jpg');
-    background-size: cover;
-    min-height: 300px;
-    border-radius: 4px;
-    color: white;
-    font-size: 36px;
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-}
+
 
 #app .navbar {
     color: white;
@@ -33,7 +22,12 @@ body {
 }
 
 #app .navbar a {
-    color: white;
+     color: white;
+   
+	
+	
+    
+    
 }
 
 .hidden {
@@ -62,7 +56,16 @@ body {
 
 
 .hero {
-    margin-bottom: 2rem;
+    background-image: url('https://anandipaliwal.files.wordpress.com/2015/06/food-table-relisted.jpg');
+    background-size: cover;
+    min-height: 300px;
+    border-radius: 4px;
+    color: white;
+    font-size: 36px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
 }
 
 .restaurant {
@@ -95,7 +98,7 @@ body {
 }
 
 .rest-wrapper .rest-category {
-    color: #89959B;
+   
     text-transform: uppercase;
 }
 
@@ -158,4 +161,11 @@ body {
   background-color:  lightgrey;
   width: 20%;
   margin: 10px auto;
+}
+.rest-category{
+	font-size:25px;
+	color: black;
+}
+.navbar-right{
+	margin-left:35px;
 }

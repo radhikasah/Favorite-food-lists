@@ -1,11 +1,12 @@
 <!-----------------------------------------------------favoourite page strt--------------------------------------------------------------->
+<div class="fav" ng-if="fav.name">
 <div class="list" id="list1">
 <h4>FOOD ITEMS YOU MAY LIKE:</<h4></h4>
 <!-- // form for elements -->
 <lable ng-repeat="list1 in lists1">
     <input type="checkbox" name="chk[]" ng-model="lst1" value="{{list1.vl}}" ng-change="change1(lst1,list1.vl)">
     {{list1.vl}} <br>
-    </lable>
+    </label>
   </div>
 
 <div class="list" id="list2">
@@ -15,7 +16,7 @@
     <lable ng-repeat="list2 in lists2">
         <input type="checkbox" name="chk[]" ng-model="lst2" value="{{list2.vl}}" ng-change="change2(lst2,list2.vl)">
         {{list2.vl}} <br>
-        </lable>
+        </label>
       </div>
 
         <!--- - - -MAIN PAGE STARTS HERE --------------------------------------------------------------------------------------------------------->
@@ -32,11 +33,12 @@
                    <div class="type">
                        <div class="bestDish" ng-if="restaurant.bestDish">
                              <span>{{restaurant.bestDish.name}} </span>
-                             <div ng-click="getFav(restaurant.bestDish.image)" class="button">See If your Fav or not</div>
+                             <div ng-click="getFav(restaurant.bestDish.image)" class="button">See If your Favourite food or not</div>
                        </div>
 
                    </div>
 
+				   
                  </div>
 
 
@@ -44,4 +46,5 @@
 
 
             </div>
+	</div>
 <!------------------------------------------fav end------------------------------------------------------------------------------------>
