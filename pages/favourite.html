@@ -6,7 +6,7 @@
     <input type="checkbox" name="chk[]" ng-model="lst1" value="{{list1.vl}}" ng-change="change1(lst1,list1.vl)">
     {{list1.vl}} <br>
     </lable>
- </div>
+  </div>
 
 <div class="list" id="list2">
     <h4>FOOD ITEMS YOU DO NOT LIKE:</h4>
@@ -15,9 +15,10 @@
     <lable ng-repeat="list2 in lists2">
         <input type="checkbox" name="chk[]" ng-model="lst2" value="{{list2.vl}}" ng-change="change2(lst2,list2.vl)">
         {{list2.vl}} <br>
-    </lable>
-</div>
-		<!--- - - -MAIN PAGE STARTS HERE ------------------------------------------------>
+        </lable>
+      </div>
+
+        <!--- - - -MAIN PAGE STARTS HERE --------------------------------------------------------------------------------------------------------->
             <div class="ui container">
                   <!-- tell them about orderBy: 'cost' and multiple filters -->
                   <div ng-repeat="restaurant in restaurants" class="restaurant" >
