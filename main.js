@@ -84,7 +84,7 @@ foodieApp.controller('restaurantController',function($scope,$routeParams,$http) 
 				'method': 'POST',
 				'url': 'https://api.clarifai.com/v2/models/bd367be194cf45149e75f01d59f77ba7/outputs',
 				'headers': {
-				'Authorization': 'Key eeab6be54c7d4136acf2cb0624a05010',
+				'Authorization': 'Key c420779fa3d84a25ac9c326276730707',
 				'Content-Type': 'application/json'
 				 },
                  'data': data,
@@ -148,7 +148,7 @@ foodieApp.controller('mainController',function($scope) {			//this controller is 
 	cost: '2200',
 	id:1,
 	hours: '12 Noon to 1 AM (Mon-Sun)',
-	image: 'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRBJPEXGlAtA-eWhyGOjSEVV3gVY0IT8ywTL9eH79uo3AYCclPI'
+	image: 'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQV0XeWr-r9o3wJ3Ki6vv1qWRtHsPYoNfRrwsuJl6-5nry2WHI8CA'
 	
 },
 {
@@ -161,7 +161,7 @@ foodieApp.controller('mainController',function($scope) {			//this controller is 
 	cost: '200',
 	id:2,
 	hours: '12 Noon to 1 AM (Mon-Sun)',
-	image: 'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRoKh-sAKBzmI4Shgz4QVLO643FZ7SZDEJd0fb69rPixmIFnsur'
+	image: 'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTPZ8wq4ClscQZWlTqgezJmVjS5ZT22Kgrn0h_jQwhkoLmyBC00Zg'
 },
 {
 	name: 'Aroma Mocha',
@@ -173,7 +173,7 @@ foodieApp.controller('mainController',function($scope) {			//this controller is 
 	cost: '700',
 	id:3,
 	hours: '12 Noon to 1 AM (sun-Sat)',
-	image: 'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQtCTNtWjF54uFAJR4mxuOVP3j8Xf-TflcgO5H0p-XWU8QJxecQsA'
+	image: 'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcS371d5s89rsxk9xouw4EoIK3tVsNFih2JT7QuoG10soTbb5BcBaQ'
 }]
 })
 
