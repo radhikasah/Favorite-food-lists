@@ -7,6 +7,7 @@
 body {
     background-color: #F3F3E8;
     font-family: Helvetica, Arial, sans-serif;
+	margin-top:63px;
 }
 #sidebar {
 	position:relative;
@@ -169,3 +170,4 @@ body {
 .navbar-right{
 	margin-left:35px;
 }
+.
